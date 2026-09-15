@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Geoffrey Hinga | Software Engineer - Dev Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="theme-default">
+  <div id="crt-overlay" class="crt-overlay"></div>
+
+  <div class="desktop-wrapper">
+    <!-- Top Cyberdeck System Menu Bar -->
+    <header class="system-bar">
+      <div class="system-bar-left">
+        <span class="os-brand"><i class="fa-solid fa-microchip"></i> CYBERDECK G-45</span>
+        <span class="system-tag"><i class="fa-solid fa-circle text-success pulse"></i> LINK: SECURE [TLS 1.3]</span>
+        <span class="uptime-badge" id="uptime-display"><i class="fa-solid fa-clock"></i> UPTIME: 00:00:00</span>
+      </div>
+      <div class="system-bar-center">
+        <span class="session-label">GEOFFREY HINGA // TACTICAL DEVELOPER WORKSTATION</span>
+      </div>
+      <div class="system-bar-right">
+        <button id="crt-toggle" class="system-btn" title="Toggle CRT Monitor Scanlines"><i class="fa-solid fa-tv"></i> CRT: OFF</button>
+        <button id="sound-toggle" class="system-btn" title="Toggle Mechanical Deck Audio"><i class="fa-solid fa-volume-high"></i> Audio: ON</button>
+        <div class="theme-picker">
+          <label for="theme-select"><i class="fa-solid fa-palette"></i></label>
+          <select id="theme-select">
+            <option value="theme-default">Dark Slate</option>
+            <option value="theme-matrix">Matrix Green</option>
+            <option value="theme-cyberpunk">Cyberpunk Neon</option>
+            <option value="theme-dracula">Dracula</option>
+          </select>
+        </div>
+        <button id="deck-fullscreen-btn" class="system-btn" title="Toggle Deck Fullscreen"><i class="fa-solid fa-expand"></i></button>
+        <span class="clock" id="live-clock">12:00:00</span>
+      </div>
+    </header>
+
+    <!-- Cyberdeck Hardware Telemetry Strip -->
+    <div class="deck-telemetry-strip">
+      <div class="telemetry-item">
+        <span class="telem-label">CPU LOAD:</span>
+        <span class="telem-val" id="telem-cpu">24%</span>
+        <div class="telem-meter"><div class="telem-fill" id="telem-cpu-fill" style="width: 24%;"></div></div>
+      </div>
+      <div class="telemetry-item">
+        <span class="telem-label">MEM USAGE:</span>
+        <span class="telem-val" id="telem-mem">4.8 / 16 GB</span>
+        <div class="telem-meter"><div class="telem-fill" style="width: 30%;"></div></div>
+      </div>
+      <div class="telemetry-item">
+        <span class="telem-label">EDGE LATENCY:</span>
+        <span class="telem-val text-accent">190 ms</span>
+      </div>
+      <div class="telemetry-item">
+        <span class="telem-label">THROUGHPUT:</span>
+        <span class="telem-val text-success">124.7 Mbps ↓ / 27.2 Mbps ↑</span>
+      </div>
+      <div class="telemetry-tactical-keys">
+        <span class="tactical-label">DECK KEYS:</span>
+        <button class="tactical-key" data-cmd="demo snake"><i class="fa-solid fa-gamepad"></i> [SNAKE LIVE]</button>
+        <button class="tactical-key" data-cmd="demo website"><i class="fa-solid fa-car"></i> [CAR SALE LIVE]</button>
+        <button class="tactical-key" data-cmd="matrix"><i class="fa-solid fa-terminal"></i> [MATRIX RAIN]</button>
+        <button class="tactical-key" data-cmd="cat resume"><i class="fa-solid fa-file-code"></i> [RESUME DUMP]</button>
+      </div>
+    </div>
+
+    <!-- Main Dual-Partition Layout -->
+    <main class="dual-workspace">
+      <!-- PARTITION 1: GUI / VISUAL DISPLAY PANE -->
+      <section class="pane gui-pane" id="gui-pane">
+        <div class="pane-header">
+          <div class="window-controls">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+          </div>
+          <div class="pane-title"><i class="fa-solid fa-display"></i> System Visual Display &mdash; Monitor View</div>
+          <div class="pane-badge"><span class="badge-pill">GUI MODE</span></div>
+        </div>
+
+        <div class="pane-content-scrollable">
+          <!-- Profile Overview Card -->
+          <div class="profile-card">
+            <div class="profile-avatar-wrapper">
+              <img src="https://avatars.githubusercontent.com/u/162416575?v=4" alt="Geoffrey Hinga Avatar" class="profile-avatar" />
+              <div class="avatar-status-badge" title="Open to Opportunities"></div>
+            </div>
+            <div class="profile-meta">
+              <div class="profile-heading">
+                <h1 class="profile-name">Geoffrey Hinga</h1>
+                <span class="profile-handle">@geoffrey45 &bull; Atomic_Brilliant</span>
+              </div>
+              <p class="profile-title"><i class="fa-solid fa-code"></i> Software Engineer &bull; Backend & Native Mobile Architect</p>
+              <p class="profile-summary">
+                Building robust web architectures and native mobile apps. Specializing in distributed systems, scalable microservices, and high-performance applications.
+              </p>
+              <div class="status-chips">
+                <span class="chip chip-success"><i class="fa-solid fa-briefcase"></i> Available for Hire</span>
+                <span class="chip"><i class="fa-solid fa-location-dot"></i> Distributed / Remote</span>
+                <span class="chip"><i class="fa-solid fa-code-branch"></i> 12+ Public Repos</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Navigation Bar for GUI Partition -->
+          <nav class="gui-nav-tabs">
+            <button class="nav-tab active" data-target="section-about"><i class="fa-solid fa-user"></i> About</button>
+            <button class="nav-tab" data-target="section-skills"><i class="fa-solid fa-layer-group"></i> Skills</button>
+            <button class="nav-tab" data-target="section-projects"><i class="fa-solid fa-diagram-project"></i> Projects</button>
+            <button class="nav-tab" data-target="section-demos"><i class="fa-solid fa-circle-play"></i> Live Demos</button>
+            <button class="nav-tab" data-target="section-experience"><i class="fa-solid fa-microchip"></i> Architecture</button>
+            <button class="nav-tab" data-target="section-contact"><i class="fa-solid fa-address-card"></i> Contact</button>
+          </nav>
+
+          <!-- Dynamic Display Sections -->
+          <div class="display-sections">
+            <!-- ABOUT SECTION -->
+            <div class="display-section active" id="section-about">
+              <div class="section-card">
+                <div class="card-header">
+                  <h3><i class="fa-solid fa-id-badge text-accent"></i> Engineering Profile & Philosophy</h3>
+                  <span class="sync-hint"><i class="fa-solid fa-terminal"></i> Run: <code>about</code></span>
+                </div>
+                <div class="card-body">
+                  <p class="lead-text">
+                    I am an engineer focused on bridging dependable backend infrastructure with seamless mobile experiences. Whether designing fault-tolerant distributed services or crafting responsive native applications, I prioritize code maintainability, clean design patterns, and low latency.
+                  </p>
+                  <div class="info-grid">
+                    <div class="info-box">
+                      <div class="info-icon"><i class="fa-solid fa-server"></i></div>
+                      <div class="info-content">
+                        <h4>Distributed & Backend Systems</h4>
+                        <p>Architecting RESTful APIs and microservices in C# / ASP.NET Core and Java with rigorous SQL indexing and caching.</p>
+                      </div>
+                    </div>
+                    <div class="info-box">
+                      <div class="info-icon"><i class="fa-solid fa-mobile-screen"></i></div>
+                      <div class="info-content">
+                        <h4>Native Mobile Development</h4>
+                        <p>Crafting responsive Android applications with Kotlin, clean MVVM architectures, and offline-first storage.</p>
+                      </div>
+                    </div>
+                    <div class="info-box">
+                      <div class="info-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                      <div class="info-content">
+                        <h4>Security & Verification</h4>
+                        <p>Implementing reliable auth workflows, token verification, and automated scanning platforms (e.g. QR ticketing).</p>
+                      </div>
+                    </div>
+                    <div class="info-box">
+                      <div class="info-icon"><i class="fa-solid fa-users-gear"></i></div>
+                      <div class="info-content">
+                        <h4>Collaboration & Open Source</h4>
+                        <p>Active contributor and team player leading repositories like Creators-Team and Excellence-Team.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- SKILLS SECTION -->
+            <div class="display-section" id="section-skills">
+              <div class="section-card">
+                <div class="card-header">
+                  <h3><i class="fa-solid fa-cubes text-accent"></i> Technical Stack & Tooling</h3>
+                  <span class="sync-hint"><i class="fa-solid fa-terminal"></i> Run: <code>skills</code></span>
+                </div>
+                <div class="card-body">
+                  <div class="skills-group">
+                    <h4 class="group-title"><i class="fa-solid fa-code"></i> Core Languages</h4>
+                    <div class="skill-tags">
+                      <span class="skill-tag highlighted"><i class="fa-brands fa-microsoft"></i> C#</span>
+                      <span class="skill-tag highlighted"><i class="fa-brands fa-java"></i> Java</span>
+                      <span class="skill-tag highlighted"><i class="fa-brands fa-python"></i> Python</span>
+                      <span class="skill-tag highlighted"><i class="fa-brands fa-android"></i> Kotlin</span>
+                      <span class="skill-tag"><i class="fa-brands fa-js"></i> JavaScript</span>
+                      <span class="skill-tag"><i class="fa-solid fa-database"></i> SQL (PostgreSQL, SQL Server)</span>
+                      <span class="skill-tag"><i class="fa-brands fa-html5"></i> HTML5 / CSS3</span>
+                    </div>
+                  </div>
+
+                  <div class="skills-group">
+                    <h4 class="group-title"><i class="fa-solid fa-network-wired"></i> Frameworks & Architectures</h4>
+                    <div class="skill-tags">
+                      <span class="skill-tag highlighted">ASP.NET Core</span>
+                      <span class="skill-tag highlighted">RESTful APIs</span>
+                      <span class="skill-tag highlighted">Distributed Systems</span>
+                      <span class="skill-tag">Entity Framework Core</span>
+                      <span class="skill-tag">Android Jetpack</span>
+                      <span class="skill-tag">Microservices</span>
+                      <span class="skill-tag">Relational Database Modeling</span>
+                    </div>
+                  </div>
+
+                  <div class="skills-group">
+                    <h4 class="group-title"><i class="fa-solid fa-screwdriver-wrench"></i> DevOps & Platforms</h4>
+                    <div class="skill-tags">
+                      <span class="skill-tag"><i class="fa-brands fa-git-alt"></i> Git & GitHub</span>
+                      <span class="skill-tag"><i class="fa-brands fa-docker"></i> Docker</span>
+                      <span class="skill-tag"><i class="fa-brands fa-cloudflare"></i> Cloudflare</span>
+                      <span class="skill-tag">Vercel Deployment</span>
+                      <span class="skill-tag"><i class="fa-brands fa-linux"></i> Linux CLI</span>
+                      <span class="skill-tag">CI/CD Pipelines</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- PROJECTS SECTION -->
+            <div class="display-section" id="section-projects">
+              <div class="section-card">
+                <div class="card-header">
+                  <h3><i class="fa-solid fa-folder-open text-accent"></i> Featured Repositories & Deployments</h3>
+                  <span class="sync-hint"><i class="fa-solid fa-terminal"></i> Run: <code>projects</code></span>
+                </div>
+                <div class="card-body">
+                  <div class="projects-grid">
+                    <!-- Project 1 -->
+                    <div class="project-card" data-project="qr-checkin">
+                      <div class="project-header">
+                        <span class="project-folder"><i class="fa-solid fa-qrcode"></i></span>
+                        <div class="project-links">
+                          <a href="https://github.com/geoffrey45/qr-checkin-app" target="_blank" title="View Source"><i class="fa-brands fa-github"></i></a>
+                        </div>
+                      </div>
+                      <h4 class="project-title">QR Check-in System</h4>
+                      <p class="project-desc">Automated QR code check-in platform designed for rapid verification, attendance logging, and event entry management.</p>
+                      <div class="project-tech">
+                        <span>Kotlin / Android</span>
+                        <span>QR Code Parsing</span>
+                        <span>REST API</span>
+                      </div>
+                      <div class="project-footer">
+                        <button class="run-cmd-btn" data-cmd="project qr-checkin"><i class="fa-solid fa-terminal"></i> Inspect in Terminal</button>
+                      </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="project-card" data-project="snake-game">
+                      <div class="project-header">
+                        <span class="project-folder"><i class="fa-solid fa-gamepad"></i></span>
+                        <div class="project-links">
+                          <a href="https://snake-game-ruby-three.vercel.app" target="_blank" title="Live Preview"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                          <a href="https://github.com/geoffrey45/snake-game" target="_blank" title="View Source"><i class="fa-brands fa-github"></i></a>
+                        </div>
+                      </div>
+                      <h4 class="project-title">Classic Snake Game Engine</h4>
+                      <p class="project-desc">A responsive, browser-based recreation of the classic arcade game featuring fluid collision detection, score persistence, and retro aesthetics.</p>
+                      <div class="project-tech">
+                        <span>JavaScript</span>
+                        <span>HTML5 Canvas</span>
+                        <span>Vercel Live</span>
+                      </div>
+                      <div class="project-footer">
+                        <button class="run-cmd-btn" data-cmd="project snake-game"><i class="fa-solid fa-terminal"></i> Inspect in Terminal</button>
+                      </div>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="project-card" data-project="website">
+                      <div class="project-header">
+                        <span class="project-folder"><i class="fa-solid fa-car-side"></i></span>
+                        <div class="project-links">
+                          <a href="https://website-puce-omega.vercel.app" target="_blank" title="Live Preview"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                          <a href="https://github.com/geoffrey45/Website" target="_blank" title="View Source"><i class="fa-brands fa-github"></i></a>
+                        </div>
+                      </div>
+                      <h4 class="project-title">Car Marketplace Platform</h4>
+                      <p class="project-desc">Interactive automotive commercial portal with vehicle showcases, category filtering, inventory management, and quote requests.</p>
+                      <div class="project-tech">
+                        <span>HTML / CSS</span>
+                        <span>JavaScript</span>
+                        <span>Vercel Live</span>
+                      </div>
+                      <div class="project-footer">
+                        <button class="run-cmd-btn" data-cmd="project website"><i class="fa-solid fa-terminal"></i> Inspect in Terminal</button>
+                      </div>
+                    </div>
+
+                    <!-- Project 4 -->
+                    <div class="project-card" data-project="road-analyzer">
+                      <div class="project-header">
+                        <span class="project-folder"><i class="fa-solid fa-road"></i></span>
+                        <div class="project-links">
+                          <a href="https://github.com/geoffrey45/Road_analyzer" target="_blank" title="View Source"><i class="fa-brands fa-github"></i></a>
+                        </div>
+                      </div>
+                      <h4 class="project-title">Road Analyzer Engine</h4>
+                      <p class="project-desc">Telemetry data processor and analytical model tool for evaluating road surface conditions and structural metrics.</p>
+                      <div class="project-tech">
+                        <span>Python / Data Analysis</span>
+                        <span>Telemetry</span>
+                        <span>Algorithms</span>
+                      </div>
+                      <div class="project-footer">
+                        <button class="run-cmd-btn" data-cmd="project road-analyzer"><i class="fa-solid fa-terminal"></i> Inspect in Terminal</button>
+                      </div>
+                    </div>
+
+                    <!-- Project 5 -->
+                    <div class="project-card" data-project="loginsystem">
+                      <div class="project-header">
+                        <span class="project-folder"><i class="fa-solid fa-shield-cat"></i></span>
+                        <div class="project-links">
+                          <a href="https://github.com/geoffrey45/Loginsystem" target="_blank" title="View Source"><i class="fa-brands fa-github"></i></a>
+                        </div>
+                      </div>
+                      <h4 class="project-title">Auth & Identity Security System</h4>
+                      <p class="project-desc">Production-ready authentication system featuring password hashing, session control, user authorization, and SQL validation.</p>
+                      <div class="project-tech">
+                        <span>C# / ASP.NET</span>
+                        <span>SQL Security</span>
+                        <span>Session Token</span>
+                      </div>
+                      <div class="project-footer">
+                        <button class="run-cmd-btn" data-cmd="project loginsystem"><i class="fa-solid fa-terminal"></i> Inspect in Terminal</button>
+                      </div>
+                    </div>
+
+                    <!-- Project 6 -->
+                    <div class="project-card" data-project="teams">
+                      <div class="project-header">
+                        <span class="project-folder"><i class="fa-solid fa-people-group"></i></span>
+                        <div class="project-links">
+                          <a href="https://github.com/geoffrey45/Creators-Team" target="_blank" title="Creators Team"><i class="fa-brands fa-github"></i></a>
+                        </div>
+                      </div>
+                      <h4 class="project-title">Creators & Excellence Hubs</h4>
+                      <p class="project-desc">Distributed team repositories focused on modular architectures, shared library building, and agile team workflows.</p>
+                      <div class="project-tech">
+                        <span>Team Workflows</span>
+                        <span>Git Collaboration</span>
+                        <span>Multi-module</span>
+                      </div>
+                      <div class="project-footer">
+                        <button class="run-cmd-btn" data-cmd="project teams"><i class="fa-solid fa-terminal"></i> Inspect in Terminal</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- LIVE DEMOS SECTION -->
+            <div class="display-section" id="section-demos">
+              <div class="section-card">
+                <div class="card-header">
+                  <h3><i class="fa-solid fa-circle-play text-accent"></i> Interactive Live Demos & Sandboxes</h3>
+                  <span class="sync-hint"><i class="fa-solid fa-terminal"></i> Run: <code>demos</code> or <code>demo &lt;name&gt;</code></span>
+                </div>
+                <div class="card-body">
+                  <p class="lead-text">
+                    Interact with deployed live applications directly inside this embedded sandbox viewer, or open them in an external browser tab.
+                  </p>
+
+                  <!-- Sandbox Frame Component -->
+                  <div class="demo-sandbox-wrapper">
+                    <div class="sandbox-browser-bar">
+                      <div class="browser-dots">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                      </div>
+                      <div class="browser-url-bar">
+                        <i class="fa-solid fa-lock text-success"></i>
+                        <span id="sandbox-active-url">https://snake-game-ruby-three.vercel.app</span>
+                      </div>
+                      <div class="browser-actions">
+                        <button id="sandbox-refresh-btn" class="browser-btn" title="Reload Sandbox"><i class="fa-solid fa-rotate-right"></i></button>
+                        <a id="sandbox-external-link" href="https://snake-game-ruby-three.vercel.app" target="_blank" class="browser-btn" title="Open in New Tab"><i class="fa-solid fa-up-right-from-square"></i></a>
+                      </div>
+                    </div>
+
+                    <!-- Sandbox Viewport -->
+                    <div class="sandbox-viewport">
+                      <iframe id="sandbox-iframe" src="https://snake-game-ruby-three.vercel.app" title="Live Application Preview" sandbox="allow-scripts allow-same-origin allow-forms allow-popups" loading="lazy"></iframe>
+                    </div>
+
+                    <!-- Sandbox Quick Preset Bar -->
+                    <div class="sandbox-presets">
+                      <span class="presets-label"><i class="fa-solid fa-sliders"></i> Active Sandbox:</span>
+                      <button class="preset-btn active" data-demo-url="https://snake-game-ruby-three.vercel.app" data-demo-title="Snake Game Engine" data-demo-id="snake">
+                        <i class="fa-solid fa-gamepad"></i> Snake Arcade (Vercel)
+                      </button>
+                      <button class="preset-btn" data-demo-url="https://website-puce-omega.vercel.app" data-demo-title="Car Marketplace" data-demo-id="website">
+                        <i class="fa-solid fa-car"></i> Car Sale Portal (Vercel)
+                      </button>
+                      <button class="preset-btn" data-demo-url="https://geoffrey45.github.io/geoffrey/" data-demo-title="Showcase Portal" data-demo-id="geoffrey">
+                        <i class="fa-brands fa-github"></i> GitHub Pages Demo
+                      </button>
+                    </div>
+                  </div>
+
+                  <!-- Live Demos Grid Cards -->
+                  <div class="demos-catalog-grid">
+                    <!-- Live Demo 1 -->
+                    <div class="demo-catalog-card">
+                      <div class="demo-card-top">
+                        <div class="demo-badge-row">
+                          <span class="status-pill status-vercel"><i class="fa-solid fa-circle"></i> Vercel Live</span>
+                          <span class="badge-tag">Arcade Web</span>
+                        </div>
+                        <h4>Snake Game Arcade</h4>
+                        <p>Fully playable retro snake game running live. Features collision physics, speed progression, and responsive keyboard controls.</p>
+                      </div>
+                      <div class="demo-card-actions">
+                        <button class="btn-demo-load" data-demo-target="snake"><i class="fa-solid fa-play"></i> Load in Sandbox</button>
+                        <a href="https://snake-game-ruby-three.vercel.app" target="_blank" class="btn-demo-ext"><i class="fa-solid fa-arrow-up-right-from-square"></i> Open Live</a>
+                        <button class="btn-demo-term run-cmd-btn" data-cmd="demo snake"><i class="fa-solid fa-terminal"></i> demo snake</button>
+                      </div>
+                    </div>
+
+                    <!-- Live Demo 2 -->
+                    <div class="demo-catalog-card">
+                      <div class="demo-card-top">
+                        <div class="demo-badge-row">
+                          <span class="status-pill status-vercel"><i class="fa-solid fa-circle"></i> Vercel Live</span>
+                          <span class="badge-tag">Commercial Portal</span>
+                        </div>
+                        <h4>Car Sales Marketplace</h4>
+                        <p>Interactive automotive commercial showroom website showcasing vehicle inventory, pricing tables, and vehicle specs.</p>
+                      </div>
+                      <div class="demo-card-actions">
+                        <button class="btn-demo-load" data-demo-target="website"><i class="fa-solid fa-play"></i> Load in Sandbox</button>
+                        <a href="https://website-puce-omega.vercel.app" target="_blank" class="btn-demo-ext"><i class="fa-solid fa-arrow-up-right-from-square"></i> Open Live</a>
+                        <button class="btn-demo-term run-cmd-btn" data-cmd="demo website"><i class="fa-solid fa-terminal"></i> demo website</button>
+                      </div>
+                    </div>
+
+                    <!-- Live Demo 3 -->
+                    <div class="demo-catalog-card">
+                      <div class="demo-card-top">
+                        <div class="demo-badge-row">
+                          <span class="status-pill status-gh"><i class="fa-solid fa-circle"></i> GitHub Pages</span>
+                          <span class="badge-tag">Web Deployment</span>
+                        </div>
+                        <h4>Geoffrey Showcase Portal</h4>
+                        <p>Live static site published via GitHub Pages edge CDN showcasing personal development modules and responsive design.</p>
+                      </div>
+                      <div class="demo-card-actions">
+                        <button class="btn-demo-load" data-demo-target="geoffrey"><i class="fa-solid fa-play"></i> Load in Sandbox</button>
+                        <a href="https://geoffrey45.github.io/geoffrey/" target="_blank" class="btn-demo-ext"><i class="fa-solid fa-arrow-up-right-from-square"></i> Open Live</a>
+                        <button class="btn-demo-term run-cmd-btn" data-cmd="demo geoffrey"><i class="fa-solid fa-terminal"></i> demo geoffrey</button>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+            <!-- ARCHITECTURE SECTION -->
+            <div class="display-section" id="section-experience">
+              <div class="section-card">
+                <div class="card-header">
+                  <h3><i class="fa-solid fa-network-wired text-accent"></i> Distributed Systems & Focus Areas</h3>
+                  <span class="sync-hint"><i class="fa-solid fa-terminal"></i> Run: <code>cat architecture</code></span>
+                </div>
+                <div class="card-body">
+                  <div class="arch-timeline">
+                    <div class="arch-node">
+                      <div class="node-badge"><i class="fa-solid fa-cubes"></i></div>
+                      <div class="node-content">
+                        <h4>Scalable Microservices & Backend Pipelines</h4>
+                        <span class="node-meta">C#, ASP.NET Core, Java, Python, SQL</span>
+                        <p>Designing decoupled endpoints with high throughput, robust error boundaries, structured logging, and transactional database integrity.</p>
+                      </div>
+                    </div>
+                    <div class="arch-node">
+                      <div class="node-badge"><i class="fa-solid fa-mobile"></i></div>
+                      <div class="node-content">
+                        <h4>Native Android & Edge Verification</h4>
+                        <span class="node-meta">Kotlin, Android SDK, CameraX / QR Vision</span>
+                        <p>Building offline-capable client apps that sync gracefully with distributed servers, handling state persistence and fast hardware integrations.</p>
+                      </div>
+                    </div>
+                    <div class="arch-node">
+                      <div class="node-badge"><i class="fa-solid fa-cloud"></i></div>
+                      <div class="node-content">
+                        <h4>Continuous Delivery & Cloud Integration</h4>
+                        <span class="node-meta">Vercel, Cloudflare, GitHub Actions, Docker</span>
+                        <p>Deploying static frontends, API gateways, and edge workers with instant global rollouts and zero-downtime health monitors.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- CONTACT SECTION -->
+            <div class="display-section" id="section-contact">
+              <div class="section-card">
+                <div class="card-header">
+                  <h3><i class="fa-solid fa-envelope-open-text text-accent"></i> Connect & Direct Comms</h3>
+                  <span class="sync-hint"><i class="fa-solid fa-terminal"></i> Run: <code>contact</code></span>
+                </div>
+                <div class="card-body">
+                  <div class="contact-cards-container">
+                    <div class="contact-tile">
+                      <div class="contact-tile-icon"><i class="fa-solid fa-envelope"></i></div>
+                      <div class="contact-tile-details">
+                        <span class="label">Email Address</span>
+                        <a href="mailto:hgmwangi100@gmail.com" class="val">hgmwangi100@gmail.com</a>
+                      </div>
+                      <button class="copy-btn" data-copy="hgmwangi100@gmail.com" title="Copy to clipboard"><i class="fa-regular fa-copy"></i></button>
+                    </div>
+
+                    <div class="contact-tile">
+                      <div class="contact-tile-icon"><i class="fa-solid fa-phone"></i></div>
+                      <div class="contact-tile-details">
+                        <span class="label">Telephone</span>
+                        <a href="tel:+254710324997" class="val">+254 710 324 997</a>
+                      </div>
+                      <button class="copy-btn" data-copy="+254710324997" title="Copy to clipboard"><i class="fa-regular fa-copy"></i></button>
+                    </div>
+
+                    <div class="contact-tile">
+                      <div class="contact-tile-icon"><i class="fa-brands fa-github"></i></div>
+                      <div class="contact-tile-details">
+                        <span class="label">GitHub Profile</span>
+                        <a href="https://github.com/geoffrey45" target="_blank" class="val">github.com/geoffrey45</a>
+                      </div>
+                      <a href="https://github.com/geoffrey45" target="_blank" class="link-btn"><i class="fa-solid fa-external-link"></i></a>
+                    </div>
+                  </div>
+
+                  <div class="dispatch-terminal-box">
+                    <div class="dispatch-header"><i class="fa-solid fa-paper-plane"></i> Direct Message Quick-Trigger</div>
+                    <p class="dispatch-desc">You can trigger a direct mail client or send an inquiry with one click below, or type <code>email &lt;your-message&gt;</code> directly in the CLI terminal partition!</p>
+                    <div class="dispatch-actions">
+                      <a href="mailto:hgmwangi100@gmail.com?subject=Inquiry%20from%20Portfolio&body=Hi%20Geoffrey,%20I%20reviewed%20your%20portfolio..." class="btn btn-primary"><i class="fa-solid fa-paper-plane"></i> Send Direct Email</a>
+                      <button class="btn btn-secondary run-cmd-btn" data-cmd="cat resume"><i class="fa-solid fa-file-invoice"></i> Dump Full Resume in Terminal</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- RESIZER DIVIDER -->
+      <div class="pane-resizer" id="pane-resizer" title="Drag to resize panes"></div>
+
+      <!-- PARTITION 2: TERMINAL / CLI INTERACTIVE PANE -->
+      <section class="pane terminal-pane" id="terminal-pane">
+        <div class="pane-header">
+          <div class="window-controls">
+            <span class="dot red" id="term-close-btn" title="Clear screen"></span>
+            <span class="dot yellow" id="term-minimize-btn" title="Minimize/Reset"></span>
+            <span class="dot green" id="term-maximize-btn" title="Full screen"></span>
+          </div>
+          <div class="pane-title"><i class="fa-solid fa-terminal"></i> guest@geoffrey-hinga:~ (zsh)</div>
+          <div class="pane-badge"><span class="badge-pill terminal-active">INTERACTIVE CLI</span></div>
+        </div>
+
+        <!-- Terminal Quick Command Chips for Fast Access -->
+        <div class="terminal-quick-chips">
+          <span class="chip-label">Quick Commands:</span>
+          <button class="term-chip" data-cmd="help">help</button>
+          <button class="term-chip" data-cmd="demos">demos</button>
+          <button class="term-chip" data-cmd="demo snake">demo snake</button>
+          <button class="term-chip" data-cmd="about">about</button>
+          <button class="term-chip" data-cmd="skills">skills</button>
+          <button class="term-chip" data-cmd="projects">projects</button>
+          <button class="term-chip" data-cmd="contact">contact</button>
+          <button class="term-chip" data-cmd="cat resume">cat resume</button>
+          <button class="term-chip" data-cmd="matrix">matrix</button>
+          <button class="term-chip" data-cmd="clear">clear</button>
+        </div>
+
+        <!-- Terminal Output Window -->
+        <div class="terminal-body" id="terminal-body">
+          <div id="terminal-output"></div>
+
+          <!-- Active Prompt Line -->
+          <div class="terminal-prompt-line">
+            <span class="prompt-user">guest</span><span class="prompt-at">@</span><span class="prompt-host">geoffrey</span><span class="prompt-colon">:</span><span class="prompt-path">~</span><span class="prompt-symbol">$</span>
+            <div class="input-wrapper">
+              <input type="text" id="terminal-input" autocomplete="off" spellcheck="false" autofocus placeholder="Type a command (e.g. 'help', 'projects', 'about')..." />
+            </div>
+          </div>
+        </div>
+
+        <!-- Terminal Footer Status Bar -->
+        <div class="terminal-footer">
+          <div class="term-footer-left">
+            <span><kbd>Tab</kbd> Autocomplete</span>
+            <span><kbd>&uarr;&darr;</kbd> History</span>
+            <span><kbd>Ctrl+L</kbd> Clear</span>
+          </div>
+          <div class="term-footer-right">
+            <span id="term-status-indicator"><i class="fa-solid fa-circle text-success"></i> READY</span>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
